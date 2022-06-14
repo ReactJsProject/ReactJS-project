@@ -21,7 +21,7 @@ function Homepage() {
         </label>
       </div>
       <div className="container-2">
-        <img src={require('../../src/assets/facemask.jpeg')}></img>
+        <img src={require('../../src/assets/facemask1.jpeg')}></img>
       </div>
     </div>
 
