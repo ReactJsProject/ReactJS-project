@@ -38,6 +38,7 @@ flex-direction: column;
     background-color: #fff;
 }
 .upload-button{
+    cursor: pointer;
     display: flex;
     width: auto;
     box-shadow: 0px 4px 4px rgb(56 160 255 / 20%);
