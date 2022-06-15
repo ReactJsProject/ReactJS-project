@@ -2,6 +2,7 @@
 
 .section{
     display: flex;
+    align-items: center;
 }
 .homepage{
     font-family: 'Lato';
@@ -38,6 +39,7 @@ flex-direction: column;
     background-color: #fff;
 }
 .upload-button{
+    align-items: center;
     cursor: pointer;
     display: flex;
     width: auto;
@@ -51,10 +53,8 @@ flex-direction: column;
     transition: .3s;
     text-decoration: none;
     max-width: 100%;
-    margin-left: 43%;
+    margin-left: 40%;
     margin-right: 40%;
-    margin-top: 3rem;
-
 }
 a{
     color: #0098fd;
@@ -98,4 +98,16 @@ a{
 .container-2 img{
     width: 80%;
     margin-top: 30px;
+}
+.container-3{
+    align-items: center;
+}
+.image{
+    align-items: center;
+    width: 30%;
+    height: 40%;
+    padding: 2% 35%;
+}
+.image img{
+    border: solid 1px #000;
 }
