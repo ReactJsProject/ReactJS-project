@@ -7,7 +7,6 @@ function Homepage() {
         setFile(URL.createObjectURL(e.target.files[0]));
     }
 
-
     
   return (
     <div className="section">
