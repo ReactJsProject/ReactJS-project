@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './homepage.css'
-import axios from 'axios'
+import { PostRequest } from './PostRequest';
+import Result from './Result';
 function Homepage() {
   const [file, setFile] = useState();
     function image(e) {
@@ -35,7 +36,7 @@ function Homepage() {
             <input accept="image/*" id="icon-button-file"
             type="file" onChange={handleChange} style={{ display: 'none'}} />
             <div className="image">
-              <img src={file}/>
+              <img src={file} />
             </div>
         </div>
         </form>
@@ -46,6 +47,7 @@ function Homepage() {
         <img src={require('../../src/assets/facemask1.jpeg')}></img>
       </div>
     </div>
+   <PostRequest image={file}/>
 
     </div>
     
