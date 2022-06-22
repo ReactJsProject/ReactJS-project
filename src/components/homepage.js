@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import './homepage.css'
+import { PostRequest } from './PostRequest';
+import Result from './Result';
 function Homepage() {
   const [file, setFile] = useState();
     function handleChange(e) {
@@ -27,6 +29,7 @@ function Homepage() {
             type="file" onChange={handleChange} style={{ display: 'none'}} />
             <div className="image">
               <img src={file} />
+              {console.log(file)}
             </div>
         </div>
         
@@ -36,6 +39,7 @@ function Homepage() {
         <img src={require('../../src/assets/facemask1.jpeg')}></img>
       </div>
     </div>
+   <PostRequest image={file}/>
 
     </div>
     
