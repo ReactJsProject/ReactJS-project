@@ -6,12 +6,13 @@ import Result from './Result';
 var load=<NoUpload/>
 function Homepage() {
   const [file, setFile] = useState();
+  const [link, setLink] = useState();
   var [flag, setFlag] = useState(false);
     function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
+        console.log(e.target.value);
+        setLink(e.target.value);
         if(flag){
-          load=<PostRequest image={file}/>
+          load=<PostRequest link={e.target.value}/>
         }
         else{
           load=<NoUpload/>
@@ -37,13 +38,13 @@ function Homepage() {
                 </div> 
             </a>
             
-            <input accept="image/*" id="icon-button-file"
-            type="file" onClick={() => setFlag(true)} onChange={handleChange} style={{ display: 'none'}} />
+            <input id="icon-button-file"
+            type="url" onClick={() => setFlag(true)} onChange={handleChange} style={{ }} />
             {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}
            
             <div className="image">
-              <img src={file} />
-              {console.log(file)}
+              <img src={link} />
+              {console.log(link)}
             </div>
         </div>
         

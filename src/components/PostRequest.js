@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from './withmask.jpeg'
 
@@ -6,7 +7,8 @@ import Image from './withmask.jpeg'
         super(props);
 
         this.state = {
-            predictionId: null
+            predictionId: null,
+            receivedlink:null
         };
         
     }
@@ -38,16 +40,33 @@ import Image from './withmask.jpeg'
     
     async componentDidMount() {
         // Simple POST request with a JSON body using fetch
-        
+        var receivedlink=this.props.link
         const requestOptions = {
             method: 'POST',
             headers: { 
             'Prediction-Key': '21cc378a2f774d40838ebdca3aa797b6',    
-            'Content-Type': 'image/jpeg',
+            'Content-Type': 'application/json',
             },
-            body: this.props.Image,
+            body: JSON.stringify({"url": receivedlink})
         };
-        const response = await fetch('https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/5d296d38-4c3a-4645-90d9-e299dccb1f97/classify/iterations/Iteration1/image', requestOptions)
+        const response = await fetch('https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/5d296d38-4c3a-4645-90d9-e299dccb1f97/classify/iterations/Iteration1/url', requestOptions)
+        const data = await response.json();
+        this.setState({ predictionId: data.predictions[0].tagName});
+        console.log(data)
+        
+    }
+    async componentDidUpdate() {
+        // Simple POST request with a JSON body using fetch
+        var receivedlink=this.props.link
+        const requestOptions = {
+            method: 'POST',
+            headers: { 
+            'Prediction-Key': '21cc378a2f774d40838ebdca3aa797b6',    
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({"url": receivedlink})
+        };
+        const response = await fetch('https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/5d296d38-4c3a-4645-90d9-e299dccb1f97/classify/iterations/Iteration1/url', requestOptions)
         const data = await response.json();
         this.setState({ predictionId: data.predictions[0].tagName});
         console.log(data)
@@ -59,7 +78,7 @@ import Image from './withmask.jpeg'
         const { predictionId } = this.state;
         return (
             <div className="card text-center m-3">
-                <h5 className="card-header"><h3>face Mask Api Response Id :{this.props.image}</h3></h5>
+                <h5 className="card-header"><h3>Uploaded Link:{this.props.link}</h3></h5>
                 <div className="card-body">
                     Result : {predictionId}
                 </div>
