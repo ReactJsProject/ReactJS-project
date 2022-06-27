@@ -108,3 +108,16 @@ a{
 .image img{
     border: solid 1px #000;
 }
+.result{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+.section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

@@ -34,7 +34,7 @@ function Homepage() {
             <input id="icon-button-file"
             type="url" onClick={() => setFlag(true)} onChange={handleChange} style={{ }} />
             {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}
-           
+            <div>{load}</div>
             <div className="image">
               <img src={link} />
               {/* {console.log(link)} */}
@@ -49,7 +49,7 @@ function Homepage() {
       
     </div>
     
-   <div>{load}</div>
+  
 
     </div>
     

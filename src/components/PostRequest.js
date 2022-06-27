@@ -1,6 +1,6 @@
-
 import React from 'react';
 import Image from './withmask.jpeg'
+import './PostRequest.css'
 
  class PostRequest extends React.Component {
     constructor(props) {
@@ -77,9 +77,9 @@ import Image from './withmask.jpeg'
         
         const { predictionId } = this.state;
         return (
-            <div className="card text-center m-3">
-                <div className="card-body">
-                    Result : {predictionId}
+            <div className="card text-center m-3 result">
+                <div className="card-body result">
+                    <b>Result :</b> {predictionId}
                 </div>
             </div>
         );
