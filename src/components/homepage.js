@@ -29,9 +29,11 @@ function Homepage() {
         <h1 className="heading">Face Mask Detection</h1>
         <label>
         <div className="container-3">
-          <h2 className='upload-text'>Upload Image URL</h2>
+          <div className='row'>
+            <h2 className='upload-text'>Image URL</h2>
             <input id="icon-button-file"
             type="url" onClick={() => setFlag(true)} onChange={handleChange} style={{ }} />
+          </div>         
             {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}
             <div>{load}</div>
             <div className="image">

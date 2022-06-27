@@ -1,7 +1,9 @@
-.result{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.file-text{
     height: 70px;
+    position: relative;
+    left: -19%;
+    bottom: 70%;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: italic;
 }
