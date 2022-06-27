@@ -1,15 +1,26 @@
 import React, {useState} from 'react'
 import './homepage.css'
+import NoUpload from './NoUpload';
 import { PostRequest } from './PostRequest';
 import Result from './Result';
+var load=<NoUpload/>
 function Homepage() {
   const [file, setFile] = useState();
+  var [flag, setFlag] = useState(false);
     function handleChange(e) {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
+        if(flag){
+          load=<PostRequest image={file}/>
+        }
+        else{
+          load=<NoUpload/>
+        }
+          
+        
     }
-
-    
+ 
+  
   return (
     <div className="section">
       <div className='container'>
@@ -25,8 +36,11 @@ function Homepage() {
                   <img src="https://assets-global.website-files.com/616e938268c8f02f94b2b53c/629de47db6e437795a105533_Icon.svg" loading="lazy"  alt="" className="livestreaming-condition"></img>
                 </div> 
             </a>
+            
             <input accept="image/*" id="icon-button-file"
-            type="file" onChange={handleChange} style={{ display: 'none'}} />
+            type="file" onClick={() => setFlag(true)} onChange={handleChange} style={{ display: 'none'}} />
+            {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}
+           
             <div className="image">
               <img src={file} />
               {console.log(file)}
@@ -38,8 +52,10 @@ function Homepage() {
       <div className="container-2">
         <img src={require('../../src/assets/facemask1.jpeg')}></img>
       </div>
+      
     </div>
-   <PostRequest image={file}/>
+    
+   <div>{load}</div>
 
     </div>
     
