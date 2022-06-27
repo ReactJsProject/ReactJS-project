@@ -78,12 +78,9 @@ import Image from './withmask.jpeg'
         const { predictionId } = this.state;
         return (
             <div className="card text-center m-3">
-                <h5 className="card-header"><h3>Uploaded Link:{this.props.link}</h3></h5>
                 <div className="card-body">
                     Result : {predictionId}
                 </div>
-                
-                <h1>test</h1>
             </div>
         );
     }

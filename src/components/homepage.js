@@ -37,14 +37,13 @@ function Homepage() {
                   <img src="https://assets-global.website-files.com/616e938268c8f02f94b2b53c/629de47db6e437795a105533_Icon.svg" loading="lazy"  alt="" className="livestreaming-condition"></img>
                 </div> 
             </a>
-            
             <input id="icon-button-file"
             type="url" onClick={() => setFlag(true)} onChange={handleChange} style={{ }} />
             {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}
            
             <div className="image">
               <img src={link} />
-              {console.log(link)}
+              {/* {console.log(link)} */}
             </div>
         </div>
         
