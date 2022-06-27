@@ -30,13 +30,7 @@ function Homepage() {
         <div className="text">Online Face Mask Detector - Free. Compatible with JPEG, JPG, PNG and more</div>
         <label>
         <div className="container-3">
-            <a className="upload-button">
-              <div className="buttontext" >Upload Image</div> 
-                <div className="arrow-bubble"> 
-                  <img src="https://assets-global.website-files.com/616e938268c8f02f94b2b53c/616e938268c8f03e4db2b839_Upload.svg" loading="lazy" alt=""></img>
-                  <img src="https://assets-global.website-files.com/616e938268c8f02f94b2b53c/629de47db6e437795a105533_Icon.svg" loading="lazy"  alt="" className="livestreaming-condition"></img>
-                </div> 
-            </a>
+          <h2>Upload Image URL</h2>
             <input id="icon-button-file"
             type="url" onClick={() => setFlag(true)} onChange={handleChange} style={{ }} />
             {/* <button onClick={() => setFlag(true)} onChange={handleChange}> Submit</button> */}

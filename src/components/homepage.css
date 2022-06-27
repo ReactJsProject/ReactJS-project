@@ -101,9 +101,9 @@ a{
 }
 .image{
     align-items: center;
-    width: 30%;
-    height: 40%;
-    padding: 2% 35%;
+    width: 25%;
+    height: 30%;
+    padding: 2% 38%;
 }
 .image img{
     border: solid 1px #000;
